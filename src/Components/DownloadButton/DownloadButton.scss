@@ -1,0 +1,11 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.downloadButton {
+    @include buttons;
+}
+
+.buttonDiv {
+    text-align: right;
+    padding: 10px;
+}

@@ -1,0 +1,40 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.navbar {
+    position: relative;
+    width: 100%;
+    height: $navbarHeight;
+    background-color: $navbarColor;
+    margin-bottom: 50px;
+}
+
+.container {
+    margin: auto;
+    max-width: 960px;
+}
+
+.toolbar {
+    height: $navbarHeight;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.toolbar>#toolbarElement {
+    min-width: 10px;
+}
+
+.navigation {
+    @include navBarNav();
+}
+
+.auth {
+    @include navBarNav();
+}
+
+.navbarLink {
+    color: $navberitemsColor;
+}

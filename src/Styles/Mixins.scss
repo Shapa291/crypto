@@ -1,0 +1,220 @@
+@import './Variables.scss';
+
+//navbar
+@mixin navBarNav {
+    color: $navberitemsColor;
+    padding: 10px;
+
+    &>li {
+        display: inline;
+        text-decoration: underline;
+    }
+
+    &>li:nth-child(1) {
+        margin-right: 20px;
+    }
+
+    &>li:hover,
+    :active {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+}
+
+//Landing
+@mixin wrapperGrid {
+    padding: $gridsPadding;
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+
+    &>div:nth-child(3) {
+        grid-column: 1/3;
+        margin: $gridsMargin $gridsMargin $gridsMargin 0;
+    }
+
+    &>CurrencyList {
+        grid-row: 1/3;
+        margin: $gridsMargin $gridsMargin $gridsMargin 0;
+    }
+
+    &>div {
+        margin-bottom: $gridsMargin;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//table
+@mixin tableConfig {
+    .table {
+        width: 100%;
+        padding: 10px 0 10px 0;
+    }
+
+    th,
+    td {
+        border-bottom: 1px solid rgb(65, 63, 63);
+        padding: 15px;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    th {
+        background: $backgroundColorForElements;
+    }
+
+    tr:nth-child(even) {
+        background-color: $backgroundColorForElements;
+    }
+
+    tr:hover {
+        background-color: $navberitemsColor;
+    }
+}
+
+//For Buttons
+@mixin buttons {
+    margin-bottom: 5%;
+    background-color: $navberitemsColor;
+    color: $navbarColor;
+    border: solid $navberitemsColor;
+    border-radius: 2px;
+    padding: 10px 24px;
+    transition-duration: 0.4s;
+    font-size: 16px;
+
+    &:disabled {
+        background-color: $disabledColor;
+        border-color: $disabledColor;
+    }
+
+    &:enabled {
+        &:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            background-color: $backgroundColorForElements;
+            color: $navbarColor;
+        }
+    }
+}
+
+//Modals
+@mixin modal {
+
+    //event bubble 
+    .modalContainer {
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+
+        &::before {
+            z-index: 1;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+
+            background-color: black;
+            opacity: 0.5;
+        }
+
+    }
+
+    .modalWindow {
+        position: absolute;
+
+        background-color: $backgroundColor;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 70%;
+
+        overflow: hidden;
+
+        border: solid $navbarColor;
+        border-width: 0px;
+        border-radius: $borderRadius;
+
+        opacity: 1;
+        transition: 1s;
+
+        padding: 10px;
+
+        z-index: 10;
+    }
+
+    .closeButton {
+        @include buttons;
+        float: right;
+    }
+
+    .headerFont {
+        margin-left: 10%;
+        font-size: 40px;
+    }
+
+    .header {
+        margin-top: 10px;
+        margin-bottom: 10%;
+    }
+
+    .form {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        margin-bottom: 5%;
+
+        input:focus {
+            background-color: $navberitemsColor;
+        }
+
+        input {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 8px;
+            margin-bottom: 8px;
+
+            width: 50%;
+
+            box-sizing: border-box;
+            padding: 12px 12px;
+        }
+
+        input:invalid {
+            border-color: $validColor;
+        }
+
+        input:valid {
+            border-color: $invalidColor;
+        }
+
+        button:invalid{
+            background-color: $disabledColor;
+            border-color: $disabledColor;
+        }
+
+        .confirmButton:valid {
+            border-width: thin;
+            border-color: inherit;
+        }
+
+        .confirmButton {
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            @include buttons;
+        }
+    }
+}

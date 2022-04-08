@@ -1,0 +1,13 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+@include tableConfig();
+
+.tableDiv {
+    width: 98%;
+    border-radius: $borderRadius;
+    border-width: 1px;
+    border: solid $navbarColor;
+    margin-bottom: $marginBottom;
+    overflow-x: auto;
+}

@@ -1,0 +1,15 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+
+.customSelect {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+select {
+    background-color: $navberitemsColor;
+    width: 96%;
+    border-radius: $borderRadius;
+    padding: 2px;
+    font-size: 120%;
+}

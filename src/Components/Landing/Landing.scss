@@ -1,0 +1,20 @@
+@import '../../Styles/Mixins.scss';
+
+.wrapper {
+    @include wrapperGrid;
+}
+
+.currency {
+    border-style: solid;
+    border-width: thin;
+    border-radius: $borderRadius;
+}
+
+.header {
+    text-align: center;
+}
+
+.list {
+    overflow-x: auto;
+    width: 100%;
+}

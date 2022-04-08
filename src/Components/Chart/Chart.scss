@@ -1,0 +1,13 @@
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Mixins.scss';
+
+.chartDiv {
+    margin-top: 5%;
+    margin-bottom: $marginBottom;
+    overflow-x: auto;
+}
+
+.chart {
+    margin-left: auto;
+    margin-right: auto;
+}
